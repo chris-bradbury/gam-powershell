@@ -11,7 +11,7 @@ function Get-ClassroomGuardians {
     $guardiansArray = @()
 
     ##-- pull the guardians for the given student and iterate --##
-    .\gam.exe print guardians student $student | ForEach-Object {
+    & $gamLocation print guardians student $student | ForEach-Object {
 
         ##-- split the returned csv into an array --##
         $guardians = $_.Split(",")
